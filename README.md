@@ -2,7 +2,7 @@
 # 👋 Xin chào! Mình là Nguyễn Minh Hiếu
 
 🎓 Sinh viên ngành: **An ninh mạng**  
-📌 Trường: **Đại học Thủy Lợi ** 
+📌 Trường: **Đại học Thủy Lợi** 
 
 ## 📚 Thông tin môn học
 

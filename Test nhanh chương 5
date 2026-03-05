@@ -284,10 +284,10 @@ carl.greet();
 
 1) Em tự chấm mức hiểu của mình (khoanh tròn):
 
-- 5.1 Giới thiệu JS:  Chưa hiểu / Tạm ổn / <mark>Khá rõ</mark>
-- 5.2 Cú pháp \& kiểu DL: Chưa hiểu / Tạm ổn / <mark>Khá rõ</mark>
-- 5.3 Điều khiển \& hàm: Chưa hiểu / <mark>Tạm ổn</mark> / Khá rõ
-- 5.4 OOP JS: Chưa hiểu / <mark>Tạm ổn</mark> / Khá rõ
+- 5.1 Giới thiệu JS:  Chưa hiểu / Tạm ổn / Khá rõ    ->  Khá rõ.
+- 5.2 Cú pháp \& kiểu DL: Chưa hiểu / Tạm ổn / Khá rõ     -> Khá rõ.
+- 5.3 Điều khiển \& hàm: Chưa hiểu / Tạm ổn / Khá rõ     -> Tạm ổn.
+- 5.4 OOP JS: Chưa hiểu / Tạm ổn / Khá rõ     -> Tạm ổn.
 
 2) Ba điều em còn chưa chắc hoặc muốn hỏi thêm:
 1. Cơ chế prototype hoạt động chi tiết như thế nào?

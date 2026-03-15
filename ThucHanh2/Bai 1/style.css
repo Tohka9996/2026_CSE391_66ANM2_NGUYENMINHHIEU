@@ -1,0 +1,74 @@
+body{
+font-family: Arial;
+background:#eee;
+}
+
+.container{
+width:800px;
+margin:40px auto;
+background:white;
+padding:25px;
+border:1px solid #ccc;
+}
+
+h2{
+margin-bottom:20px;
+color:#333;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+/* 2 input trên cùng */
+.row{
+display:flex;
+gap:15px;
+}
+
+.row input{
+flex:1;
+padding:10px;
+border:1px solid #ccc;
+}
+
+/* subject */
+.full{
+padding:10px;
+border:1px solid #ccc;
+}
+
+/* message */
+textarea{
+height:180px;
+padding:10px;
+border:1px solid #ccc;
+resize:vertical;
+}
+
+/* phần dưới */
+.bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+button{
+background:#5bc0de;
+border:none;
+color:white;
+padding:10px 20px;
+border-radius:4px;
+cursor:pointer;
+}
+
+button:hover{
+background:#31b0d5;
+}
+
+.bottom p{
+font-size:14px;
+color:#666;
+}

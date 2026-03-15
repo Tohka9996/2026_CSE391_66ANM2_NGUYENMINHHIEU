@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đăng ký tài khoản</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Form Đăng Ký</h2>
+
+<form id="registerForm">
+
+<label>Họ và tên</label>
+<input type="text" id="fullname" maxlength="50">
+<div id="nameCount">0/50</div>
+<div class="error" id="fullnameError"></div>
+
+<label>Email</label>
+<input type="text" id="email">
+<div class="error" id="emailError"></div>
+
+<label>Số điện thoại</label>
+<input type="text" id="phone">
+<div class="error" id="phoneError"></div>
+
+<label>Mật khẩu</label>
+
+<div class="passwordBox">
+<input type="password" id="password">
+<span id="togglePass">👁</span>
+</div>
+
+<div class="strengthBar">
+<div id="strength"></div>
+</div>
+
+<div id="strengthText"></div>
+<div class="error" id="passwordError"></div>
+
+<label>Xác nhận mật khẩu</label>
+<div class="passwordBox">
+<input type="password" id="confirm">
+<span id="toggleConfirm">👁</span>
+</div>
+<div class="error" id="confirmError"></div>
+
+<label>Giới tính</label><br>
+
+<label>
+<input type="radio" name="gender" value="Nam"> Nam
+</label>
+
+<label>
+<input type="radio" name="gender" value="Nữ"> Nữ
+</label>
+
+<div class="error" id="genderError"></div>
+
+<br><br>
+
+<label>
+<input type="checkbox" id="terms">
+Tôi đồng ý điều khoản
+</label>
+
+<div class="error" id="termsError"></div>
+
+<br>
+
+<button type="submit">Đăng ký</button>
+
+</form>
+
+<div id="successMessage" class="success"></div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

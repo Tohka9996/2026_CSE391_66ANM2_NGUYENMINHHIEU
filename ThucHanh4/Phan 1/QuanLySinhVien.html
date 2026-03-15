@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bảng Điểm Sinh Viên</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Bảng Điểm Sinh Viên</h2>
+
+<input type="text" id="name" placeholder="Họ tên">
+<input type="number" id="score" placeholder="Điểm (0-10)">
+<button id="addBtn">Thêm</button>
+
+<!-- Tìm kiếm + lọc (đưa vào trong container) -->
+<div class="controls">
+  <input type="text" id="search" placeholder="Tìm theo tên...">
+
+  <select id="filterRank">
+    <option value="all">Tất cả</option>
+    <option value="Giỏi">Giỏi</option>
+    <option value="Khá">Khá</option>
+    <option value="Trung bình">Trung bình</option>
+    <option value="Yếu">Yếu</option>
+  </select>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>STT</th>
+<th>Họ tên</th>
+<th>Điểm</th>
+<th>Xếp loại</th>
+<th>Thao tác</th>
+</tr>
+</thead>
+
+<tbody id="tableBody">
+</tbody>
+</table>
+
+<div id="stats">
+Tổng sinh viên: 0 | Điểm trung bình: 0
+</div>
+
+</div>
+
+<script>
+
+let students = []
+
+const nameInput = document.getElementById("name")
+const scoreInput = document.getElementById("score")
+const addBtn = document.getElementById("addBtn")
+const tableBody = document.getElementById("tableBody")
+const stats = document.getElementById("stats")
+
+function getRank(score){
+    if(score >= 8.5) return "Giỏi"
+    if(score >= 7) return "Khá"
+    if(score >= 5) return "Trung bình"
+    return "Yếu"
+}
+
+function addStudent(){
+
+    const name = nameInput.value.trim()
+    const score = parseFloat(scoreInput.value)
+
+    if(name === "" || isNaN(score) || score < 0 || score > 10){
+        alert("Dữ liệu không hợp lệ!")
+        return
+    }
+
+    students.push({
+        name: name,
+        score: score
+    })
+
+    nameInput.value = ""
+    scoreInput.value = ""
+    nameInput.focus()
+
+    renderTable()
+}
+
+function renderTable(){
+
+    tableBody.innerHTML = ""
+
+    let total = 0
+
+    students.forEach((sv,index)=>{
+
+        total += sv.score
+
+        let rank = getRank(sv.score)
+
+        let row = `
+        <tr class="${sv.score < 5 ? 'yeu' : ''}">
+        <td>${index+1}</td>
+        <td>${sv.name}</td>
+        <td>${sv.score}</td>
+        <td>${rank}</td>
+        <td><button data-index="${index}">Xóa</button></td>
+        </tr>
+        `
+
+        tableBody.innerHTML += row
+    })
+
+    let avg = students.length ? (total/students.length).toFixed(2) : 0
+
+    stats.innerText =
+    "Tổng sinh viên: " + students.length +
+    " | Điểm trung bình: " + avg
+}
+
+tableBody.addEventListener("click",function(e){
+
+    if(e.target.tagName === "BUTTON"){
+
+        const index = e.target.dataset.index
+        students.splice(index,1)
+
+        renderTable()
+    }
+
+})
+
+addBtn.addEventListener("click",addStudent)
+
+scoreInput.addEventListener("keypress",function(e){
+    if(e.key === "Enter"){
+        addStudent()
+    }
+})
+
+</script>
+
+<script src="main.js"></script>
+
+</body>
+</html>

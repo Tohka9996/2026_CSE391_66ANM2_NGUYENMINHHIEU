@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Multi Step Form</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Đăng ký tài khoản</h2>
+
+<div class="progress">
+<div id="progressBar"></div>
+</div>
+
+<form id="form">
+
+<!-- STEP 1 -->
+<div class="step active">
+
+<h3>Bước 1: Thông tin cá nhân</h3>
+
+<input type="text" id="name" placeholder="Họ tên">
+<p class="error" id="nameError"></p>
+
+<input type="date" id="birth">
+<p class="error" id="birthError"></p>
+
+<!-- <select id="gender">
+<option value="">Chọn giới tính</option>
+<option>Nam</option>
+<option>Nữ</option>
+<option>I'm GAY</option>
+</select> -->
+
+<select id="gender" style="width:100%">
+
+<option value="">Chọn giới tính</option>
+
+<option value="nam" data-img="male.png">Nam</option>
+
+<option value="nu" data-img="female.png">Nữ</option>
+
+<option value="i'm gay" data-img="i'm gay.png">I'm GAY</option>
+
+</select>
+
+<p class="error" id="genderError"></p>
+
+<button type="button" id="next1">Tiếp theo</button>
+
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+
+<h3>Bước 2: Thông tin tài khoản</h3>
+
+<input type="text" id="email" placeholder="Email">
+<p class="error" id="emailError"></p>
+
+<input type="password" id="password" placeholder="Mật khẩu">
+<p class="error" id="passError"></p>
+
+<input type="password" id="confirm" placeholder="Xác nhận mật khẩu">
+<p class="error" id="confirmError"></p>
+
+<button type="button" id="back1">Quay lại</button>
+<button type="button" id="next2">Tiếp theo</button>
+
+</div>
+
+<!-- STEP 3 -->
+<div class="step">
+
+<h3>Bước 3: Xác nhận</h3>
+
+<div id="summary"></div>
+
+<button type="button" id="back2">Quay lại</button>
+<button type="submit">Đăng ký</button>
+
+</div>
+
+<div id="successPopup" class="popup">
+<div class="popup-content">
+
+<h3>Đăng ký thành công 🎉</h3>
+<p>Tài khoản của bạn đã được tạo.</p>
+
+<button id="doneBtn">Hoàn thành</button>
+
+</div>
+</div>
+
+</form>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
